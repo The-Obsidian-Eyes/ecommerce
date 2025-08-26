@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import AuthLayout from "./components/ui/auth/layout.jsx";
+import AuthLayout from "./components/auth/layout.jsx";
 import AuthLogin from "./pages/auth/login.jsx";
 import AuthRegister from "./pages/auth/register.jsx";
 import AdminLayout from "./components/admin-view/layout.jsx";
