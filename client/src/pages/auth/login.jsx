@@ -1,7 +1,31 @@
-import CommonForm from "@/components/common/form";
-import { useToast } from "@/components/ui/use-toast";
-import { loginFormControls } from "@/config";
-import { loginUser } from "@/store/auth-slice";
+
+// function AuthLogin(){
+//     return <div>login</div>;
+// }
+
+// export default AuthLogin;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import CommonForm from "../../components/common/form";
+import { useToast } from "../../components/ui/use-toast";
+import { loginFormControls } from "../../config";
+import { loginUser } from "../../store/auth-slice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -61,10 +85,3 @@ function AuthLogin() {
 }
 
 export default AuthLogin;
-
-
-// function AuthLogin(){
-//     return <div>login</div>;
-// }
-
-// export default AuthLogin;

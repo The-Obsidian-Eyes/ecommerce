@@ -5,10 +5,10 @@
 // export default AuthRegister;
 
 
-import CommonForm from "@/components/common/form";
-import { useToast } from "@/components/ui/use-toast";
-import { registerFormControls } from "@/config";
-import { registerUser } from "@/store/auth-slice";
+import CommonForm from "../../components/common/form";
+import { useToast } from "../../components/ui/use-toast";
+import { registerFormControls } from "../../config";
+import { registerUser } from "../../store/auth-slice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";

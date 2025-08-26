@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import AuthLayout from "./components/auth/layout.jsx";
 import AuthLogin from "./pages/auth/login.jsx";
 import AuthRegister from "./pages/auth/register.jsx";
@@ -9,6 +10,7 @@ import AdminFeatures from "./pages/admin-view/features.jsx";
 import AdminOrders from "./pages/admin-view/orders.jsx";
 import AdminProducts from "./pages/admin-view/products.jsx";
 import ShoppingLayout from "./components/shopping-view/layout";
+import { checkAuth } from "./store/auth-slice";
 import NotFound from "./pages/not-found";
 import ShoppingHome from "./pages/shopping-view/home";
 import ShoppingListing from "./pages/shopping-view/listing";
@@ -18,8 +20,16 @@ import CheckAuth from "./components/common/check-auth";
 import UnauthPage from "./pages/unauth-page";
 
 function App() {
-  const isAuthenticated = false;
-  const user = null;
+  const { user, isAuthenticated, isLoading } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
+
+  // if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
+  if (isLoading) return <div>Loading...</div>;
+  console.log(isLoading, user);
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">

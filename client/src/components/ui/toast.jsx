@@ -1,3 +1,5 @@
+//! Complete
+
 import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva } from "class-variance-authority";
@@ -36,10 +38,10 @@ const toastVariants = cva(
 
 const Toast = React.forwardRef(({ className, variant, ...props }, ref) => {
   return (
-    <ToastPrimitives.Root
+    (<ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
-      {...props} />
+      {...props} />)
   );
 })
 Toast.displayName = ToastPrimitives.Root.displayName
